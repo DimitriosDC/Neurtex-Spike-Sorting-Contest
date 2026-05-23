@@ -1,0 +1,37 @@
+# Neurtex Spike Sorting Contest
+
+This repository contains a complete notebook-based spike sorting and classification pipeline developed for the **Neurtex Manual Spike Sorting Contest**. The workflow processes human intracranial microwire recordings, detects candidate spike events, extracts waveform-level features, performs unsupervised clustering, trains supervised classifiers, and exports spike-event and channel-level classification files for further analysis or submission.
+
+The project was developed in Python using Google Colab and combines classical signal processing, unsupervised clustering, machine learning, and deep learning for spike sorting in multichannel Neuralynx recordings.
+
+---
+
+## Project Overview
+
+Spike sorting is the process of detecting and classifying extracellular action potentials from electrophysiological recordings. In intracranial microwire recordings, this is especially challenging because signals may contain overlapping neural activity, background noise, simulated waveforms, and real biological spike events.
+
+This project implements a practical spike sorting pipeline that:
+
+- loads Neuralynx `.Ncs` electrophysiology files,
+- applies bandpass filtering for spike-band activity,
+- detects candidate spike events using an amplitude threshold,
+- extracts waveform-level statistical and spectral features,
+- applies Gaussian Mixture Model clustering,
+- trains a Random Forest classifier,
+- trains a CNN-LSTM neural network classifier,
+- evaluates classification performance,
+- analyses waveform feature importance,
+- exports spike event times and predicted cluster labels,
+- generates channel-level real/simulated classifications,
+- produces SUA/MUA-style cluster labels.
+
+---
+
+## Repository Contents
+
+```text
+Neurtex-Spike-Sorting-Contest/
+│
+├── Neurtex Spike Sorting Contest.ipynb   # Main notebook pipeline
+├── README.md                             # Project documentation
+└── outputs/                              # Optional folder for exported files
